@@ -5,7 +5,7 @@ In this notebook we will inspect and find relevant data on US mayors via Wikidat
 
 ```sparql
 ## Count the total number of ceos
-SELECT (COUNT(*) as ?eff)
+SELECT (COUNT(*) as ?count)
 WHERE {
     ?item wdt:P31 wd:Q5;  # Any instance of a human.
 
@@ -13,7 +13,7 @@ WHERE {
 }  
 #LIMIT 10
 ```
-eff = 6615
+- count = 6615
 
 
 

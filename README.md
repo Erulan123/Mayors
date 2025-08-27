@@ -1,3 +1,5 @@
+## First of all here is a ordered schema of pages you need to visit first.
+
 ## Analyse des Maires à l’aide de Méthodes Numériques 
 
 

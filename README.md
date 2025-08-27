@@ -1,4 +1,4 @@
-## Here is a ordered map of pages you need to visit to understand how this project was done.
+## Here is a ordered map that will guide you through the project by explaining it's structure and the logical sequence.
 
 ## Analyse des Maires à l’aide de Méthodes Numériques 
 

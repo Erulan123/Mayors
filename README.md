@@ -1,4 +1,4 @@
-## First of all here is a ordered schema of pages you need to visit first.
+## Here is a ordered map of pages you need to visit to understand how this project was done.
 
 ## Analyse des Maires à l’aide de Méthodes Numériques 
 

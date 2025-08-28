@@ -1,8 +1,11 @@
-## Explore Wikidata
+# Explore Wikidata
 
-In this notebook we will inspect and find relevant data on US mayors via Wikidata SPARQL endpoint
-### Inspect CEOs 
+This notebook explores **US mayors** using the **Wikidata SPARQL endpoint**.  
+We’ll proceed step by step — starting broad (all mayors), then filtering for US and date of birth, and finally extracting detailed information.
 
+---
+
+## Step 1: Count all mayors worldwide
 ```sparql
 # 1) Count humans who have held a mayoral position (any country)
 SELECT (COUNT(*) AS ?count)

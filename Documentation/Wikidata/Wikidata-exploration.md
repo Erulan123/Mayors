@@ -16,7 +16,8 @@ WHERE {
   ?position wdt:P279* wd:Q30185.  # (subclass of) mayor
 }
 ```
-Now we want to filter US mayors
+--- 
+## Step 2: Restrict to Us mayors only
 ```sparql
 # 2) Count humans who have held a mayoral position in the United States
 SELECT (COUNT(*) AS ?count)
@@ -28,8 +29,8 @@ WHERE {
             wdt:P17 wd:Q30.       # country = United States
 }
 ```
-
-Now those who are born after 1800
+---
+## Step 3: Filter US mayors born after 1800
 ```sparql
 # 3) Count DISTINCT humans who have held a mayoral position AND were born after 1800
 SELECT (COUNT(DISTINCT ?item) AS ?count)
@@ -44,10 +45,12 @@ WHERE {
   FILTER (YEAR(?birthDate) > 1800)
 }
 ```
-* count 2813
-
-# List available properties with headcount
-
+- Result: 2813
+--- 
+## Step 4: List available properties with headcount
+This query shows which properties (e.g., gender, party, etc.) exist for US mayors born after 1800,
+and how many distinct people have each property filled in.
+(Incleded in Wikidata Documents: wdt_mayors_properties.csv)
 ```sparql
 SELECT ?p ?propLabel (COUNT(DISTINCT ?item) AS ?count)
 WHERE {
@@ -69,3 +72,37 @@ GROUP BY ?p ?propLabel
 ORDER BY DESC(?count)
 
 ```
+--- 
+## Step 5: Retrieve full biographical data
+Finally, we can fetch a table of US mayors born after 1800,
+including biographical details, political party, term dates, and the city served.
+(Included it in Wikidata: mayors_core.csv)
+```sparql
+# US mayors born after 1800 — all fields required
+SELECT ?person ?personLabel ?birthDate ?genderLabel ?partyLabel
+       ?start ?end ?position ?positionLabel ?city ?cityLabel
+WHERE {
+  # person + required biographical properties
+  ?person wdt:P569 ?birthDate .
+  FILTER (YEAR(?birthDate) > 1800)
+  ?person wdt:P21 ?gender .
+  ?person wdt:P102 ?party .
+
+  # position statements (term-level)
+  ?person p:P39 ?posStmt .
+  ?posStmt ps:P39 ?position .
+  ?posStmt pq:P580 ?start .
+  ?posStmt pq:P582 ?end .
+
+  # office is (subclass of) mayor and applies to a US city
+  ?position wdt:P279* wd:Q30185 ;
+            wdt:P1001 ?city .
+  ?city wdt:P17 wd:Q30 .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr". }
+}
+ORDER BY ?personLabel ?start
+```
+Resluts:
+- 957 rows → mayors with all required data
+- 1902 rows → if start and end dates are made optional

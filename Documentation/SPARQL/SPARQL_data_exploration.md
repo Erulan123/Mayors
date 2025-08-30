@@ -80,7 +80,7 @@ including biographical details, political party, term dates, and the city served
 ```sparql
 # US mayors born after 1800 — all fields required
 SELECT ?person ?personLabel ?birthDate ?genderLabel ?partyLabel
-       ?start ?end ?position ?positionLabel ?city ?cityLabel
+       ?start ?end ?positionLabel ?cityLabel
 WHERE {
   # person + required biographical properties
   ?person wdt:P569 ?birthDate .

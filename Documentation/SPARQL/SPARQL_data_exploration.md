@@ -106,3 +106,60 @@ ORDER BY ?personLabel ?start
 Resluts:
 - 957 rows → mayors with all required data
 - 1902 rows → if start and end dates are made optional
+
+--- 
+## Data with education
+```sparql
+
+# US mayors born after 1800 — LONG FORMAT (no GROUP_CONCAT)
+# One row per (person, term, education). Education type included for bucketing.
+
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX p:    <http://www.wikidata.org/prop/>
+PREFIX ps:   <http://www.wikidata.org/prop/statement/>
+PREFIX pq:   <http://www.wikidata.org/prop/qualifier/>
+
+SELECT
+  ?person ?personLabel ?birthDate ?genderLabel ?partyLabel
+  ?start ?end ?positionLabel ?cityLabel
+  ?edu ?eduLabel
+  ?eduType ?eduTypeLabel
+WHERE {
+  # person + required biographical properties
+  ?person wdt:P569 ?birthDate .
+  FILTER (YEAR(?birthDate) > 1800)
+  ?person wdt:P21  ?gender .
+  ?person wdt:P102 ?party .
+
+  # position statements (term-level)
+  ?person p:P39 ?posStmt .
+  ?posStmt ps:P39 ?position .
+  ?posStmt pq:P580 ?start .
+  ?posStmt pq:P582 ?end .
+
+  # office is (subclass of) mayor and applies to a US city
+  ?position wdt:P279* wd:Q30185 ;   # mayor
+            wdt:P1001  ?city .
+  ?city wdt:P17 wd:Q30 .            # United States
+
+  # Education (REQUIRED for the network)
+  ?person wdt:P69 ?edu .
+  OPTIONAL { ?edu wdt:P31 ?eduType . }  # immediate type of the school (we’ll bucket later)
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en,fr,en-gb" .
+    ?person     rdfs:label ?personLabel .
+    ?gender     rdfs:label ?genderLabel .
+    ?party      rdfs:label ?partyLabel .
+    ?position   rdfs:label ?positionLabel .
+    ?city       rdfs:label ?cityLabel .
+    ?edu        rdfs:label ?eduLabel .
+    ?eduType    rdfs:label ?eduTypeLabel .
+  }
+}
+ORDER BY ?personLabel ?start ?eduLabel
+```
+
+
+

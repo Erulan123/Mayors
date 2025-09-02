@@ -1,4 +1,4 @@
-# Prosopography of U.S. Mayors
+# U.S. Mayors
 
 This project explores the political field of United States mayors through a **prosopographical approach** — the collective study of individuals and their trajectories. By systematically collecting socio-demographic, political, and educational information, we aim to represent:
 

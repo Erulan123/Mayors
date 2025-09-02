@@ -164,6 +164,7 @@ Results:
 - However oonly 562 distinct mayors
 
 --- 
+## ! Not used but better for network analysis
 ## Data with only education and mayoral terms
 
 ```sparql

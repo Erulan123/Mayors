@@ -123,8 +123,7 @@ PREFIX pq:   <http://www.wikidata.org/prop/qualifier/>
 SELECT
   ?person ?personLabel ?birthDate ?genderLabel ?partyLabel
   ?start ?end ?positionLabel ?cityLabel
-  ?edu ?eduLabel
-  ?eduType ?eduTypeLabel
+  ?eduLabel ?eduTypeLabel
 WHERE {
   # person + required biographical properties
   ?person wdt:P569 ?birthDate .

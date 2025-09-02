@@ -17,34 +17,41 @@ The representation of women among U.S. mayors has grown significantly only in re
 Mayoral offices have historically been dominated by the two major U.S. parties (Democratic and Republican), with little sustained space for others.
 
 ![Gender and Political Party (residuals)](https://github.com/Erulan123/Mayors/blob/main/images/gender_party.png)
+![Political Party over time](https://github.com/Erulan123/Mayors/blob/main/images/party_counts_generations.png)
 
 ---
 
 ## 3. Age of Mayors at First Term
 The majority of mayors begin their first term between their 30s and 50s, with relatively few very young or older entrants.
 
-![Age at Start (%)](age_proportion.png)
+![Age at Start (%)](https://github.com/Erulan123/Mayors/blob/main/images/age_proportion.png)
+![Age over time](https://github.com/Erulan123/Mayors/blob/main/images/age_proportion_generations.png)
 
 ---
 
-## 4. Gender, Age, and Party Relationships
+## 4. Gender and Party Relationships
 Statistical analysis shows only weak associations between gender, age groups, and political party.
 
-![Gender by Period (Residuals)](gender_period.png)
+![Gender by Period (Residuals)](https://github.com/Erulan123/Mayors/blob/main/images/gender_party.png)
+
+Strongest of them is gender & age and periods
+![Gender Age](https://github.com/Erulan123/Mayors/blob/main/images/gender_age.png)
+![Gender Period](https://github.com/Erulan123/Mayors/blob/main/images/gender_period.png)
+
 
 ---
 
 ## 5. Educational Backgrounds and Universities
 A small number of universities — notably Yale, Harvard, and Columbia — stand out as particularly influential in producing mayors.
 
-![University Centralities](betweenness_eigenvector.png)
+![University Centralities](https://github.com/Erulan123/Mayors/blob/main/images/betweenness_eigenvector.png)
 
 ---
 
 ## 6. University Networks
 Universities form a dense and interconnected network. Elite institutions appear as central nodes in these educational–political pathways.
 
-![University–University Network](edu_edu_network.png)
+![University–University Network](https://github.com/Erulan123/Mayors/blob/main/images/edu_edu_network.png)
 
 ---
 

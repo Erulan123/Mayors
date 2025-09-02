@@ -16,8 +16,8 @@ The representation of women among U.S. mayors has grown significantly only in re
 ## 2. Political Party Dominance
 Mayoral offices have historically been dominated by the two major U.S. parties (Democratic and Republican), with little sustained space for others.
 
-![Gender and Political Party (residuals)](https://github.com/Erulan123/Mayors/blob/main/images/gender_party.png)
 ![Political Party over time](https://github.com/Erulan123/Mayors/blob/main/images/party_counts_generations.png)
+![Political Party Proportion(residuals)](https://github.com/Erulan123/Mayors/blob/main/images/party_proportion_generations.png)
 
 ---
 

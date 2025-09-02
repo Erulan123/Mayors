@@ -8,3 +8,8 @@ This project explores the political field of United States mayors through a **pr
 - The **evolution** of these structures over time.
 
 The project combines statistical analysis, temporal exploration, and network modeling to better understand how gender, party affiliation, education, and age have shaped mayoral careers across U.S. history.
+
+
+---
+
+📌 **Note:** For a structured overview of the project (contents and workflow), please see the [Home Page](https://github.com/Erulan123/Mayors/blob/main/Documentation/Home.md).

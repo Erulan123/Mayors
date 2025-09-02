@@ -160,6 +160,60 @@ WHERE {
 }
 ORDER BY ?personLabel ?start ?eduLabel
 ```
+Results:
+-  3117 rows
+- However oonly 562 distinct mayors
+
+--- 
+## Data with only education and mayoral terms
+
+```sparql
+# US mayors born after 1800 — LONG FORMAT (no GROUP_CONCAT)
+# One row per (person, term, education). Minimal columns for network use.
+
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX p:    <http://www.wikidata.org/prop/>
+PREFIX ps:   <http://www.wikidata.org/prop/statement/>
+PREFIX pq:   <http://www.wikidata.org/prop/qualifier/>
+
+SELECT DISTINCT
+  ?personLabel
+  ?birthDate
+  ?genderLabel
+  ?start
+  ?eduLabel
+WHERE {
+  # person + birthdate filter
+  ?person wdt:P569 ?birthDate .
+  FILTER (YEAR(?birthDate) > 1800)
+
+  # position statements (term-level)
+  ?person p:P39 ?posStmt .
+  ?posStmt ps:P39 ?position .
+  OPTIONAL { ?posStmt pq:P580 ?start . }   # start date is optional
+
+  # office is (subclass of) mayor and applies to a US city
+  ?position wdt:P279* wd:Q30185 ;          # mayor
+            wdt:P1001  ?city .
+  ?city wdt:P17 wd:Q30 .                   # United States
+
+  # education (required for the network)
+  ?person wdt:P69 ?edu .
+
+  # gender optional to avoid losing rows
+  OPTIONAL { ?person wdt:P21 ?gender . }
+
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en,fr,en-gb" .
+    ?person  rdfs:label ?personLabel .
+    ?gender  rdfs:label ?genderLabel .
+    ?edu     rdfs:label ?eduLabel .
+  }
+}
+ORDER BY ?personLabel ?start ?eduLabel
+```
+
 
 
 

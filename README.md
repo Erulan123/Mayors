@@ -1,14 +1,10 @@
-## Here is a ordered map that will guide you through the project by explaining it's structure and the logical sequence.
+# Prosopography of U.S. Mayors
 
-## Analyse des Maires à l’aide de Méthodes Numériques 
+This project explores the political field of United States mayors through a **prosopographical approach** — the collective study of individuals and their trajectories. By systematically collecting socio-demographic, political, and educational information, we aim to represent:
 
+- The **social, political, and educational backgrounds** of mayors.
+- Their **affiliations** with political parties and universities.
+- The **networks** emerging from these affiliations.
+- The **evolution** of these structures over time.
 
-Ce projet s’inscrit dans le cadre du cours **"Application de méthodes numériques pour les sciences humaines et historiques"**.  
-Il vise à analyser les relations entre les **Maires des grandes villes des Etats Unis**, en utilisant des techniques numériques et des données extraites de **Wikipédia**.  
-
-Les maires sont liés par différentes interactions : **parties politiques, education, encien emplois, assosiations etc...**.  
-En exploitant ces relations, nous chercherons à mieux comprendre la structure du politique americaine.  
-
-## Sources  
-Les données seront extraites principalement de Wikipédia :  
-- Liste des maires americains: https://en.wikipedia.org/wiki/List_of_mayors_of_the_50_largest_cities_in_the_United_States
+The project combines statistical analysis, temporal exploration, and network modeling to better understand how gender, party affiliation, education, and age have shaped mayoral careers across U.S. history.

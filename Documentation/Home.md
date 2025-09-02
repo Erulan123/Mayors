@@ -20,26 +20,27 @@ This project uses a prosopographical approach to analyze the collective biograph
 
 The project followed a simple, structured workflow:
 
-1. [**Define the research problem**](https://github.com/Erulan123/Mayors/blob/main/Documentation/Problematic-Questioning.md)
-   - Formulate guiding research questions inspired by prosopography.  
+1. **Choose a subject**
+   - [Look at wikipedia to find enough data](https://github.com/Erulan123/Mayors/blob/main/Documentation/wikipedia_mayors_links.md)
+     
+2. **Define the research problem**
+   - [Formulate guiding research questions inspired by prosopography](https://github.com/Erulan123/Mayors/blob/main/Documentation/Problematic-Questioning.md)
 
-2. [**Identify and collect data**](https://github.com/Erulan123/Mayors/blob/main/Documentation/SPARQL/SPARQL_data_exploration.md)
-   - [Find data in wikipedia](https://github.com/Erulan123/Mayors/blob/main/Documentation/wikipedia_mayors_links.md)
-   - Retrieve biographical, political, and educational information.  
-   - Use **SPARQL queries** to extract structured data from Wikidata.  
+3. **Identify and collect data** 
+   - [Use **SPARQL queries** to extract structured data from Wikidata](https://github.com/Erulan123/Mayors/blob/main/Documentation/SPARQL/SPARQL_data_exploration.md)
+   - [Save raw data](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_core.csv)
 
-3. [**Clean and prepare datasets**](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_data_cleaning.ipynb)
-   - Harmonize variables (gender, parties, universities, time periods).
-   - Save [cleaned data set](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_cleaned.csv)
-   - Create derived fields (age groups, parties, periods).  
+4. **Clean Data**
+   - [Harmonize variables](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_data_cleaning.ipynb)
+   - [Save cleaned data set](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_cleaned.csv)
 
-4. [**Perform temporal analysis**](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_qulitative_time.ipynb)
-   - Track representation and dominance across historical periods.
+5. **Perform temporal analysis**
+   - [Track representation and dominance across historical periods](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_qulitative_time.ipynb)
 
-5. [**Conduct exploratory analysis**](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_bivariate_analysis.ipynb)
-   - Descriptive statistics on gender, party, and age.  
-   - Bivariate tests (Chi², Cramer’s V) to assess associations.
+6. **Conduct exploratory analysis**
+   - [Descriptive statistics on gender, party, and age (Chi², Cramer’s V)](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_bivariate_analysis.ipynb)  
 
-6. [**Explore educational backgrounds**](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_edu_network.jpynb)
-   - Identify most influential universities.  
-   - Build network representations linking mayors and institutions.  
+7. **Explore educational backgrounds**
+   - [Find new data via **SPARQL**](https://github.com/Erulan123/Mayors/blob/main/Documentation/SPARQL/SPARQL_data_exploration.md)
+   - [Save new education data](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_edu_long.csv)
+   - [Build network representations linking mayors and institutions](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_edu_network.jpynb)

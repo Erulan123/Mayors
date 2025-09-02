@@ -28,6 +28,7 @@ The project followed a simple, structured workflow:
 
 3. **Identify and collect data** 
    - [Use **SPARQL queries** to extract structured data from Wikidata](https://github.com/Erulan123/Mayors/blob/main/Documentation/SPARQL/SPARQL_data_exploration.md)
+   - [Choose most interesting and common properties](https://github.com/Erulan123/Mayors/blob/main/Data/wdt_mayors_properties.csv)
    - [Save raw data](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_core.csv)
 
 4. **Clean Data**

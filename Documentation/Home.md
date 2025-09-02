@@ -44,3 +44,6 @@ The project followed a simple, structured workflow:
    - [Find new data via **SPARQL**](https://github.com/Erulan123/Mayors/blob/main/Documentation/SPARQL/SPARQL_data_exploration.md)
    - [Save new education data](https://github.com/Erulan123/Mayors/blob/main/Data/mayors_edu_long.csv)
    - [Build network representations linking mayors and institutions](https://github.com/Erulan123/Mayors/blob/main/Jupyter_notebooks/mayors_edu_network.jpynb)
+
+8. **Conclusion**
+   - [Answer the questions and summarise results](https://github.com/Erulan123/Mayors/blob/main/Documentation/results.md)
